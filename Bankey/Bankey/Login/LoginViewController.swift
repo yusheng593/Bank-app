@@ -8,7 +8,17 @@
 import UIKit
 import SnapKit
 
+protocol LogoutDelegate: AnyObject {
+    func didLogout()
+}
+
+protocol LoginViewControllerDelegate: AnyObject {
+    func didLogin()
+}
+
 class LoginViewController: UIViewController {
+
+    weak var delegate: LoginViewControllerDelegate?
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -63,6 +73,12 @@ class LoginViewController: UIViewController {
 
         style()
         layout()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        signInButton.configuration?.showsActivityIndicator = false
     }
 }
 
@@ -127,6 +143,7 @@ extension LoginViewController {
 
         if username == "Samuel" && password == "isawesome" {
             signInButton.configuration?.showsActivityIndicator = true
+            delegate?.didLogin()
         } else {
             configureView(withMessage: "Incorrect username / password")
         }

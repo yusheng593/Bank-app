@@ -21,6 +21,7 @@ class LoginView: UIView {
         textField.snp.makeConstraints { make in
             make.height.equalTo(48)
         }
+        textField.text = "Samuel"
         return textField
     }()
 
@@ -33,6 +34,7 @@ class LoginView: UIView {
         textField.snp.makeConstraints { make in
             make.height.equalTo(48)
         }
+        textField.text = "isawesome"
         return textField
     }()
 
