@@ -60,9 +60,3 @@ class MoreViewController: UIViewController {
         view.backgroundColor = .systemPurple
     }
 }
-
-class AccountSummaryViewController: UIViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemGreen
-    }
-}

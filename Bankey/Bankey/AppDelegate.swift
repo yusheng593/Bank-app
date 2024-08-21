@@ -30,7 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onboardingContainerViewController.delegate = self
         
         window?.rootViewController = mainViewController
-        mainViewController.selectedIndex = 1
+        window?.rootViewController = AccountSummaryViewController()
+//        mainViewController.selectedIndex = 1
 
         return true
     }
