@@ -17,6 +17,11 @@ class AccountSummaryCell: UITableViewCell {
     struct ViewModel {
         let accountType: AccountType
         let accountName: String
+        let balance: Decimal
+
+        var balanceAsAttributedString: NSAttributedString {
+            return CurrencyFormatter().makeAttributedCurrency(balance)
+        }
     }
 
     let viewModel: ViewModel? = nil
@@ -57,7 +62,7 @@ class AccountSummaryCell: UITableViewCell {
     lazy var balanceAmountLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .right
-        label.attributedText = makeFormattedBalance(dollars: "929,466", cents: "23")
+        label.attributedText = makeFormattedBalance(dollars: "xxx,xxx", cents: "xx")
         return label
     }()
 
@@ -147,6 +152,7 @@ extension AccountSummaryCell {
 
         typeLabel.text = vm.accountType.rawValue
         nameLabel.text = vm.accountName
+        balanceAmountLabel.attributedText = vm.balanceAsAttributedString
 
         switch vm.accountType {
         case .Banking:
