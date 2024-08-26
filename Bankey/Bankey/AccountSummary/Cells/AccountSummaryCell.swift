@@ -39,7 +39,7 @@ class AccountSummaryCell: UITableViewCell {
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .body)
-        label.adjustsFontForContentSizeCategory = true
+        label.adjustsFontSizeToFitWidth = true
         label.text = "Account name"
         return label
     }()
@@ -54,6 +54,7 @@ class AccountSummaryCell: UITableViewCell {
     lazy var balanceLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .right
         label.text = "Some balance"
         return label

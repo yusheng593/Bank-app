@@ -35,6 +35,7 @@ class LoginView: UIView {
             make.height.equalTo(48)
         }
         textField.text = "isawesome"
+        textField.enablePasswordToggle()
         return textField
     }()
 

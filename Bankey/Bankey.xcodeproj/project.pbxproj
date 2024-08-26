@@ -18,6 +18,8 @@
 		C60E7BB72C78C022006CD60D /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60E7BB62C78C022006CD60D /* CurrencyFormatter.swift */; };
 		C60E7BBF2C78D0C0006CD60D /* BankeyUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60E7BBE2C78D0C0006CD60D /* BankeyUnitTests.swift */; };
 		C60E7BC62C78D1FC006CD60D /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60E7BC52C78D1FC006CD60D /* CurrencyFormatterTests.swift */; };
+		C60E7BC82C7C40D7006CD60D /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60E7BC72C7C40D7006CD60D /* NSNotificationName.swift */; };
+		C60E7BCA2C7C4461006CD60D /* UITextField+SecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60E7BC92C7C4461006CD60D /* UITextField+SecureToggle.swift */; };
 		C6390E3F2B9EB98F00EF284D /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6390E3E2B9EB98F00EF284D /* OnboardingContainerViewController.swift */; };
 		C6BDA8F32B8DA75600ED452A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDA8F22B8DA75600ED452A /* AppDelegate.swift */; };
 		C6BDA8F72B8DA75600ED452A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDA8F62B8DA75600ED452A /* LoginViewController.swift */; };
@@ -64,6 +66,8 @@
 		C60E7BBC2C78D0C0006CD60D /* BankeyUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C60E7BBE2C78D0C0006CD60D /* BankeyUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankeyUnitTests.swift; sourceTree = "<group>"; };
 		C60E7BC52C78D1FC006CD60D /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
+		C60E7BC72C7C40D7006CD60D /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
+		C60E7BC92C7C4461006CD60D /* UITextField+SecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+SecureToggle.swift"; sourceTree = "<group>"; };
 		C6390E3E2B9EB98F00EF284D /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		C6BDA8EF2B8DA75600ED452A /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6BDA8F22B8DA75600ED452A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				C60E7B992C75AEE0006CD60D /* UIViewController+Utils.swift */,
 				C60E7BB42C78BF2B006CD60D /* DecimalUtils.swift */,
 				C60E7BB62C78C022006CD60D /* CurrencyFormatter.swift */,
+				C60E7BC72C7C40D7006CD60D /* NSNotificationName.swift */,
+				C60E7BC92C7C4461006CD60D /* UITextField+SecureToggle.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -325,9 +331,11 @@
 				C6BDA9092B8DB10000ED452A /* LoginView.swift in Sources */,
 				C6D4F9422C7441BA00CE556E /* LocalState.swift in Sources */,
 				C60E7BA12C77039B006CD60D /* AccountSummaryHeaderView.swift in Sources */,
+				C60E7BCA2C7C4461006CD60D /* UITextField+SecureToggle.swift in Sources */,
 				C6D4F93F2C732F1700CE556E /* DummyViewController.swift in Sources */,
 				C60E7BB72C78C022006CD60D /* CurrencyFormatter.swift in Sources */,
 				C60E7BB52C78BF2B006CD60D /* DecimalUtils.swift in Sources */,
+				C60E7BC82C7C40D7006CD60D /* NSNotificationName.swift in Sources */,
 				C6BDA8F72B8DA75600ED452A /* LoginViewController.swift in Sources */,
 				C60E7BB32C7856D1006CD60D /* AccountSummaryCell.swift in Sources */,
 				C6D4F9382C6CED2A00CE556E /* OnboardingViewController.swift in Sources */,
