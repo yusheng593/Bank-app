@@ -27,6 +27,7 @@ class LoginViewController: UIViewController {
         label.numberOfLines = 1
         label.textColor = .label
         label.text = "Bankey"
+        label.alpha = 0
         return label
     }()
 
@@ -37,6 +38,7 @@ class LoginViewController: UIViewController {
         label.numberOfLines = 0
         label.textColor = .label
         label.text = "Your premium source for all things banking!"
+        label.alpha = 0
         return label
     }()
 
@@ -68,11 +70,19 @@ class LoginViewController: UIViewController {
         return label
     }()
 
+    // animation
+    var leadingEdgeOffScreen: CGFloat = -1000
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         style()
         layout()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animate()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -110,15 +120,14 @@ extension LoginViewController {
 
         view.addSubview(subtitleLabel)
         subtitleLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
             make.bottom.equalTo(loginView.snp.top).offset(-16)
-            make.leading.trailing.equalTo(loginView)
+            make.leading.trailing.equalTo(leadingEdgeOffScreen)
         }
 
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
             make.bottom.equalTo(subtitleLabel.snp.top).offset(-16)
+            make.leading.equalTo(view.snp.leading).offset(leadingEdgeOffScreen)
         }
 
 
@@ -152,5 +161,39 @@ extension LoginViewController {
     private func configureView(withMessage message: String) {
         errorMessageLabel.isHidden = false
         errorMessageLabel.text = message
+    }
+}
+
+// MARK: - Animations
+extension LoginViewController {
+    private func animate() {
+        let duration = 0.8
+
+        let animator1 = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
+            self.titleLabel.snp.remakeConstraints { make in
+                make.bottom.equalTo(self.subtitleLabel.snp.top).offset(-16)
+                make.trailing.equalTo(self.loginView.snp.trailing)
+                make.centerX.equalToSuperview()
+            }
+            self.view.layoutIfNeeded()
+        }
+        animator1.startAnimation()
+
+        let animator2 = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
+            self.subtitleLabel.snp.remakeConstraints { make in
+                make.bottom.equalTo(self.loginView.snp.top).offset(-16)
+                make.leading.trailing.equalTo(self.loginView)
+                make.centerX.equalToSuperview()
+            }
+            self.view.layoutIfNeeded()
+        }
+        animator2.startAnimation(afterDelay: 0.2)
+
+        let animator3 = UIViewPropertyAnimator(duration: duration * 2, curve: .easeInOut) {
+            self.titleLabel.alpha = 1
+            self.subtitleLabel.alpha = 1
+            self.view.layoutIfNeeded()
+        }
+        animator3.startAnimation(afterDelay: 0.2)
     }
 }
