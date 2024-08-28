@@ -34,9 +34,8 @@ extension AccountSummaryViewController {
     private func setup() {
         setupTableView()
         setupTableHeaderView()
-//        fetchAccounts()
         setupNavigationBar()
-        fetchDataAndLoadViews()
+        fetchData()
     }
 
     private func setupTableView() {
@@ -100,34 +99,36 @@ extension AccountSummaryViewController: UITableViewDelegate {
 
 // MARK: - Networking
 extension AccountSummaryViewController {
-    private func fetchDataAndLoadViews() {
+    private func fetchData() {
+        let group = DispatchGroup()
 
+        group.enter()
         fetchProfile(forUserId: "1") { result in
             switch result {
             case .success(let profile):
                 self.profile = profile
                 self.configureTableHeaderView(with: profile)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
+            group.leave()
         }
 
+        group.enter()
         fetchAccounts(forUserId: "1") { result in
             switch result {
             case .success(let accounts):
                 self.accounts = accounts
                 self.configureTableCells(with: accounts)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
+            group.leave()
         }
 
+        group.notify(queue: .main) {
+            self.tableView.reloadData()
+        }
 
     }
 
