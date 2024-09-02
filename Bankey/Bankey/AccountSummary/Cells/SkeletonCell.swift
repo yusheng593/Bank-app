@@ -68,7 +68,7 @@ extension SkeletonCell {
         typeLabel.text = "           "
 
         underlineView.translatesAutoresizingMaskIntoConstraints = false
-        underlineView.backgroundColor = appColor
+        underlineView.backgroundColor = Colors.appColor
 
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
@@ -90,7 +90,7 @@ extension SkeletonCell {
         balanceAmountLabel.text = "-XXX,XXX.X-"
 
         chevronImageView.translatesAutoresizingMaskIntoConstraints = false
-        let chevronImage = UIImage(systemName: "chevron.right")!.withTintColor(appColor, renderingMode: .alwaysOriginal)
+        let chevronImage = UIImage(systemName: "chevron.right")!.withTintColor(Colors.appColor, renderingMode: .alwaysOriginal)
         chevronImageView.image = chevronImage
     }
 

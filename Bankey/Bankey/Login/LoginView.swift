@@ -15,7 +15,7 @@ class LoginView: UIView {
 
     lazy var usernameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Username"
+        textField.placeholder = Strings.username
         textField.delegate = self
         textField.tag = TextFieldTag.username.rawValue
         textField.snp.makeConstraints { make in
@@ -27,7 +27,7 @@ class LoginView: UIView {
 
     lazy var passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Password"
+        textField.placeholder = Strings.password
         textField.isSecureTextEntry = true
         textField.delegate = self
         textField.tag = TextFieldTag.password.rawValue

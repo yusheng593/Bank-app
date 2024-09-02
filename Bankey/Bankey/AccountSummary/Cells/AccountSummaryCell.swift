@@ -69,7 +69,7 @@ class AccountSummaryCell: UITableViewCell {
 
     private lazy var chevronImageView: UIImageView = {
         let imageView = UIImageView()
-        let chevronImage = UIImage(systemName: "chevron.right")!.withTintColor(appColor, renderingMode: .alwaysOriginal)
+        let chevronImage = UIImage(systemName: "chevron.right")!.withTintColor(Colors.appColor, renderingMode: .alwaysOriginal)
         imageView.image = chevronImage
         return imageView
     }()
@@ -90,7 +90,7 @@ class AccountSummaryCell: UITableViewCell {
 
 extension AccountSummaryCell {
     private func setup() {
-        underlineView.backgroundColor = appColor
+        underlineView.backgroundColor = Colors.appColor
 
         contentView.addSubview(typeLabel) // imporant! Add to contentView.
         contentView.addSubview(underlineView)
@@ -157,7 +157,7 @@ extension AccountSummaryCell {
 
         switch vm.accountType {
         case .Banking:
-            underlineView.backgroundColor = appColor
+            underlineView.backgroundColor = Colors.appColor
             balanceLabel.text = "Current balance"
         case .CreditCard:
             underlineView.backgroundColor = .systemOrange

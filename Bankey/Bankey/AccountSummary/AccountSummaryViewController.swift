@@ -54,7 +54,7 @@ extension AccountSummaryViewController {
     }
 
     private func setupTableView() {
-        tableView.backgroundColor = appColor
+        tableView.backgroundColor = Colors.appColor
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -88,7 +88,7 @@ extension AccountSummaryViewController {
     }
 
     private func setupRefreshControl() {
-        refreshControl.tintColor = appColor
+        refreshControl.tintColor = Colors.appColor
         refreshControl.addTarget(self, action: #selector(refreshContent), for: .valueChanged)
         tableView.refreshControl = refreshControl
     }

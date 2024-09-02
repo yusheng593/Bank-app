@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         label.textAlignment = .center
         label.numberOfLines = 1
         label.textColor = .label
-        label.text = "Bankey"
+        label.text = Strings.bankey
         label.alpha = 0
         return label
     }()
@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.textColor = .label
-        label.text = "Your premium source for all things banking!"
+        label.text = Strings.loginViewSubtitle
         label.alpha = 0
         return label
     }()
@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
         let button = UIButton(type: .system)
         button.configuration = .filled()
         button.configuration?.imagePadding = 8
-        button.setTitle("Login", for: .normal)
+        button.setTitle(Strings.loginViewButtonTitle, for: .normal)
         button.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered)
         return button
     }()

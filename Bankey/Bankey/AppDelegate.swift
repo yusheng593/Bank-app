@@ -7,8 +7,6 @@
 
 import UIKit
 
-let appColor: UIColor = .systemTeal
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -54,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func prepMainView() {
         mainViewController.setStatusBar()
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().backgroundColor = appColor
+        UINavigationBar.appearance().backgroundColor = Colors.appColor
     }
 
 }
