@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08F8EE9323DDD720F2F3D921 /* Pods_BankeyUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925D6A27958C254587132273 /* Pods_BankeyUnitTests.framework */; };
+		3EF133AC52ED364A4626A8A7 /* Pods_Bankey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B73E3C0D570492D45361E5 /* Pods_Bankey.framework */; };
 		C60E7B9A2C75AEE0006CD60D /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60E7B992C75AEE0006CD60D /* UIViewController+Utils.swift */; };
 		C60E7B9C2C75B093006CD60D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60E7B9B2C75B093006CD60D /* MainViewController.swift */; };
 		C60E7B9F2C762406006CD60D /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60E7B9E2C762406006CD60D /* AccountSummaryViewController.swift */; };
 		C60E7BA12C77039B006CD60D /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60E7BA02C77039B006CD60D /* AccountSummaryHeaderView.swift */; };
 		C60E7BA32C7703C2006CD60D /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60E7BA22C7703C2006CD60D /* AccountSummaryHeaderView.xib */; };
-		C60E7BAA2C770AE7006CD60D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C60E7BA92C770AE7006CD60D /* SnapKit */; };
 		C60E7BB32C7856D1006CD60D /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60E7BB22C7856D1006CD60D /* AccountSummaryCell.swift */; };
 		C60E7BB52C78BF2B006CD60D /* DecimalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60E7BB42C78BF2B006CD60D /* DecimalUtils.swift */; };
 		C60E7BB72C78C022006CD60D /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60E7BB62C78C022006CD60D /* CurrencyFormatter.swift */; };
@@ -64,6 +65,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E637897755697577509E842 /* Pods-Bankey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankey.release.xcconfig"; path = "Target Support Files/Pods-Bankey/Pods-Bankey.release.xcconfig"; sourceTree = "<group>"; };
+		38024FCA5FE18BCEEA41403C /* Pods-BankeyUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankeyUnitTests.release.xcconfig"; path = "Target Support Files/Pods-BankeyUnitTests/Pods-BankeyUnitTests.release.xcconfig"; sourceTree = "<group>"; };
+		925D6A27958C254587132273 /* Pods_BankeyUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BankeyUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AACEBA90FD8C7BB40DA5C2C8 /* Pods-BankeyUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankeyUnitTests.debug.xcconfig"; path = "Target Support Files/Pods-BankeyUnitTests/Pods-BankeyUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C60E7B992C75AEE0006CD60D /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		C60E7B9B2C75B093006CD60D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C60E7B9E2C762406006CD60D /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +102,8 @@
 		C6D4F9372C6CED2A00CE556E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C6D4F93E2C732F1700CE556E /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		C6D4F9412C7441BA00CE556E /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
+		E0B73E3C0D570492D45361E5 /* Pods_Bankey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bankey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE88F05386491BB69C89404D /* Pods-Bankey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankey.debug.xcconfig"; path = "Target Support Files/Pods-Bankey/Pods-Bankey.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08F8EE9323DDD720F2F3D921 /* Pods_BankeyUnitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,13 +119,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C60E7BAA2C770AE7006CD60D /* SnapKit in Frameworks */,
+				3EF133AC52ED364A4626A8A7 /* Pods_Bankey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32DC7264BD5B06A56A69A276 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE88F05386491BB69C89404D /* Pods-Bankey.debug.xcconfig */,
+				1E637897755697577509E842 /* Pods-Bankey.release.xcconfig */,
+				AACEBA90FD8C7BB40DA5C2C8 /* Pods-BankeyUnitTests.debug.xcconfig */,
+				38024FCA5FE18BCEEA41403C /* Pods-BankeyUnitTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		631EBB04954C657DA716E858 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0B73E3C0D570492D45361E5 /* Pods_Bankey.framework */,
+				925D6A27958C254587132273 /* Pods_BankeyUnitTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C60E7B9D2C7623E1006CD60D /* AccountSummary */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +235,8 @@
 				C6BDA8F12B8DA75600ED452A /* Bankey */,
 				C60E7BBD2C78D0C0006CD60D /* BankeyUnitTests */,
 				C6BDA8F02B8DA75600ED452A /* Products */,
+				32DC7264BD5B06A56A69A276 /* Pods */,
+				631EBB04954C657DA716E858 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -276,6 +306,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C60E7BC22C78D0C0006CD60D /* Build configuration list for PBXNativeTarget "BankeyUnitTests" */;
 			buildPhases = (
+				BB222489950DEF5CCB2966C0 /* [CP] Check Pods Manifest.lock */,
 				C60E7BB82C78D0C0006CD60D /* Sources */,
 				C60E7BB92C78D0C0006CD60D /* Frameworks */,
 				C60E7BBA2C78D0C0006CD60D /* Resources */,
@@ -294,19 +325,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6BDA9032B8DA75700ED452A /* Build configuration list for PBXNativeTarget "Bankey" */;
 			buildPhases = (
+				62528FC68DC84E9D4F3AD753 /* [CP] Check Pods Manifest.lock */,
 				C6BDA8EB2B8DA75600ED452A /* Sources */,
 				C6BDA8EC2B8DA75600ED452A /* Frameworks */,
 				C6BDA8ED2B8DA75600ED452A /* Resources */,
 				C6437B4D2BFF0CCF002A83DD /* Embed Frameworks */,
+				A6EEDCA9EE3607BB49A9AC25 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Bankey;
-			packageProductDependencies = (
-				C60E7BA92C770AE7006CD60D /* SnapKit */,
-			);
 			productName = Bankey;
 			productReference = C6BDA8EF2B8DA75600ED452A /* Bankey.app */;
 			productType = "com.apple.product-type.application";
@@ -319,7 +349,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					C60E7BBB2C78D0C0006CD60D = {
 						CreatedOnToolsVersion = 15.4;
@@ -340,7 +370,6 @@
 			);
 			mainGroup = C6BDA8E62B8DA75600ED452A;
 			packageReferences = (
-				C60E7BA82C770AE7006CD60D /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = C6BDA8F02B8DA75600ED452A /* Products */;
 			projectDirPath = "";
@@ -371,6 +400,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62528FC68DC84E9D4F3AD753 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bankey-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6EEDCA9EE3607BB49A9AC25 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bankey/Pods-Bankey-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bankey/Pods-Bankey-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bankey/Pods-Bankey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB222489950DEF5CCB2966C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BankeyUnitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C60E7BB82C78D0C0006CD60D /* Sources */ = {
@@ -438,6 +531,7 @@
 /* Begin XCBuildConfiguration section */
 		C60E7BC32C78D0C0006CD60D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AACEBA90FD8C7BB40DA5C2C8 /* Pods-BankeyUnitTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -457,6 +551,7 @@
 		};
 		C60E7BC42C78D0C0006CD60D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38024FCA5FE18BCEEA41403C /* Pods-BankeyUnitTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -595,12 +690,14 @@
 		};
 		C6BDA9042B8DA75700ED452A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE88F05386491BB69C89404D /* Pods-Bankey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H23U829MKV;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bankey/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -623,12 +720,14 @@
 		};
 		C6BDA9052B8DA75700ED452A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E637897755697577509E842 /* Pods-Bankey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H23U829MKV;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bankey/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -680,25 +779,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		C60E7BA82C770AE7006CD60D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C60E7BA92C770AE7006CD60D /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C60E7BA82C770AE7006CD60D /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C6BDA8E72B8DA75600ED452A /* Project object */;
 }

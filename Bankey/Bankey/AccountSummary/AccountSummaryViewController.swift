@@ -148,46 +148,24 @@ extension AccountSummaryViewController: UITableViewDelegate {
 
 // MARK: - Networking
 extension AccountSummaryViewController {
-    private func fetchData() {
-        let group = DispatchGroup()
 
+    private func fetchData() {
         // 測試用
         let userId = String(Int.random(in: 1..<4))
 
-        fetchProfile(group: group, userId: userId)
-        fetchAccounts(group: group, userId: userId)
-
-        group.notify(queue: .main) {
-            self.reloadView()
-        }
-    }
-
-    private func fetchProfile(group: DispatchGroup, userId: String) {
-        group.enter()
-        profileManager.fetchProfile(forUserId: userId) { result in
-            switch result {
-            case .success(let profile):
-                self.profile = profile
-            case .failure(let error):
-                self.displayError(error)
+        Task {
+            do {
+                self.profile = try await  profileManager.fetchProfile(forUserId: userId)
+                self.accounts = try await fetchAccounts(forUserId: userId)
+                self.reloadView()
+            } catch {
+                self.displayError(NetworkError.serverError)
             }
-            group.leave()
         }
+
     }
 
-    private func fetchAccounts(group: DispatchGroup, userId: String) {
-        group.enter()
-        fetchAccounts(forUserId: userId) { result in
-            switch result {
-            case .success(let accounts):
-                self.accounts = accounts
-            case .failure(let error):
-                self.displayError(error)
-            }
-            group.leave()
-        }
-    }
-
+    @MainActor
     private func reloadView() {
         self.tableView.refreshControl?.endRefreshing()
 
@@ -229,6 +207,9 @@ extension AccountSummaryViewController {
         case .decodingError:
             title = "Network Error"
             message = "Ensure you are connected to the internet. Please try again."
+        case .invalidURLError:
+            title = "Invalid URL"
+            message = "Please check your URL and try again."
         }
         return (title, message)
     }
@@ -247,10 +228,24 @@ extension AccountSummaryViewController {
     }
 
     func forceFetchProfile() {
-        fetchProfile(group: DispatchGroup(), userId: "1")
+        Task {
+            do {
+                self.profile =  try await profileManager.fetchProfile(forUserId: "1")
+            } catch {
+                // 錯誤處理
+                print("Error: \(error)")
+            }
+        }
     }
 
     func forceFetchAccount() {
-        fetchAccounts(group: DispatchGroup(), userId: "1")
+        Task {
+            do {
+                self.accounts =  try await fetchAccounts(forUserId: "1")
+            } catch {
+                // 錯誤處理
+                print("Error: \(error)")
+            }
+        }
     }
 }

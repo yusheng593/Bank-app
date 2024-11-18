@@ -8,12 +8,13 @@
 import Foundation
 
 protocol ProfileManageable: AnyObject {
-    func fetchProfile(forUserId userId: String, completion: @escaping (Result<Profile,NetworkError>) -> Void)
+    func fetchProfile(forUserId userId: String) async throws -> Profile
 }
 
 enum NetworkError:Error {
     case serverError
     case decodingError
+    case invalidURLError
 }
 
 struct Profile:Codable {
@@ -29,21 +30,25 @@ struct Profile:Codable {
 }
 
 class ProfileManager: ProfileManageable {
-    func fetchProfile(forUserId userId: String, completion: @escaping (Result<Profile,NetworkError>) -> Void) {
-        let url = URL(string: "https://fierce-retreat-36855.herokuapp.com/bankey/profile/\(userId)")!
 
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else {
-                completion(.failure(.serverError))
-                return
-            }
+    func fetchProfile(forUserId userId: String) async throws -> Profile {
+        let urlString = "https://fierce-retreat-36855.herokuapp.com/bankey/profile/\(userId)"
+        guard let url = URL(string: urlString) else {
+            throw NetworkError.invalidURLError
+        }
 
-            do {
-                let profile = try JSONDecoder().decode(Profile.self, from: data)
-                completion(.success(profile))
-            } catch {
-                completion(.failure(.decodingError))
-            }
-        }.resume()
+        let (data, response) = try await URLSession.shared.data(from: url)
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw NetworkError.serverError
+        }
+
+        do {
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            let profile  = try decoder.decode(Profile.self, from: data)
+            return profile
+        } catch {
+            throw NetworkError.decodingError
+        }
     }
 }
