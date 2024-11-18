@@ -16,6 +16,6 @@ struct Strings {
 }
 
 struct Colors {
-    static let appColor: UIColor = .systemTeal
+    static let appColor: UIColor = .systemBlue
 }
 

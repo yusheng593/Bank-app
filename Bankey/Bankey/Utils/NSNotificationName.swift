@@ -9,4 +9,5 @@ import Foundation
 
 extension Notification.Name {
     static let logout = Notification.Name("Logout")
+    static let textFieldDidChange = Notification.Name("TextFieldDidChange")
 }

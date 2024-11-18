@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 protocol LogoutDelegate: AnyObject {
     func didLogout()
@@ -19,6 +20,8 @@ protocol LoginViewControllerDelegate: AnyObject {
 class LoginViewController: UIViewController {
 
     weak var delegate: LoginViewControllerDelegate?
+
+    private var cancellables = Set<AnyCancellable>()
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -55,6 +58,7 @@ class LoginViewController: UIViewController {
     private lazy var signInButton: UIButton = {
         let button = UIButton(type: .system)
         button.configuration = .filled()
+        button.configuration?.background.backgroundColor = UIColor.systemBlue
         button.configuration?.imagePadding = 8
         button.setTitle(Strings.loginViewButtonTitle, for: .normal)
         button.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered)
@@ -78,6 +82,13 @@ class LoginViewController: UIViewController {
 
         style()
         layout()
+        // 3.訂閱輸入框狀態，根據狀態啟用按鈕
+        loginView.textFieldStatusPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] canEnable in
+                self?.signInButton.isEnabled = canEnable
+            }
+            .store(in: &cancellables)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -144,11 +155,6 @@ extension LoginViewController {
     private func login() {
         guard let username = username, let password = password else { assertionFailure("Username / password should never be nil")
             return }
-
-        if username.isEmpty || password.isEmpty {
-            configureView(withMessage: "Username / Password cannot be blank")
-            return
-        }
 
         if username == "Samuel" && password == "isawesome" {
             signInButton.configuration?.showsActivityIndicator = true

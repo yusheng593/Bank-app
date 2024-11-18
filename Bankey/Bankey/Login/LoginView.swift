@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import Combine
 
 class LoginView: UIView {
     enum TextFieldTag: Int {
         case username = 0
         case password = 1
     }
+
+    // 1.用來向外發送狀態的 Publisher
+    let textFieldStatusPublisher = PassthroughSubject<Bool, Never>()
 
     lazy var usernameTextField: UITextField = {
         let textField = UITextField()
@@ -91,6 +95,17 @@ extension LoginView {
 }
 
 extension LoginView: UITextFieldDelegate {
+
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        // 確保帳號和密碼不為空且不包含空白字符
+        let isUsernameValid = !(usernameTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
+        && !(usernameTextField.text?.contains(" ") ?? false)
+        let isPasswordValid = !(passwordTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
+        && !(passwordTextField.text?.contains(" ") ?? false)
+
+        // 2.發送輸入框狀態
+        textFieldStatusPublisher.send(isUsernameValid && isPasswordValid)
+    }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         usernameTextField.endEditing(true)
